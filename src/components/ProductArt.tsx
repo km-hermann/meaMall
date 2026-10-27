@@ -1,6 +1,12 @@
+"use client";
+
+import { useId } from "react";
+
 type Props = { art: string; className?: string };
 
 export function ProductArt({ art, className = "" }: Props) {
+  const uid = useId().replace(/:/g, "");
+  const bg = `${uid}-bg`;
   return (
     <div className={`relative overflow-hidden ${className}`}>
       <svg
@@ -10,16 +16,12 @@ export function ProductArt({ art, className = "" }: Props) {
         role="img"
       >
         <defs>
-          <linearGradient id={`${art}-bg`} x1="0" y1="0" x2="1" y2="1">
+          <linearGradient id={bg} x1="0" y1="0" x2="1" y2="1">
             <stop offset="0%" stopColor="#fff6ea" />
             <stop offset="100%" stopColor="#f8c8d4" />
           </linearGradient>
-          <linearGradient id={`${art}-gold`} x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stopColor="#f3e5ab" />
-            <stop offset="100%" stopColor="#c9a227" />
-          </linearGradient>
         </defs>
-        <rect width="200" height="200" fill={`url(#${art}-bg)`} />
+        <rect width="200" height="200" fill={`url(#${bg})`} />
         <circle cx="28" cy="30" r="3" fill="#fff" opacity="0.9" />
         <circle cx="170" cy="40" r="2.4" fill="#fff" opacity="0.85" />
         <circle cx="150" cy="170" r="2" fill="#d4af37" opacity="0.7" />

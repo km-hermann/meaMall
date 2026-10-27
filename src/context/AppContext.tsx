@@ -153,6 +153,7 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
     };
     setOrder(next);
     setCart([]);
+    localStorage.setItem(STORAGE_KEYS.tracking, "0");
     return next;
   }, [promoApplied]);
 

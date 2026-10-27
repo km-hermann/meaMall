@@ -1,26 +1,174 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-cream: #fff8f0;
+  --color-cream-deep: #fbf3e8;
+  --color-blush-200: #f6d5de;
+  --color-blush-400: #f4a7b9;
+  --color-blush-500: #e88aa3;
+  --color-gold: #d4af37;
+  --color-gold-soft: #f3e5ab;
+  --color-rose-ink: #4a2c32;
+  --font-sans: var(--font-dm-sans);
+  --font-serif: var(--font-playfair);
+  --font-script: var(--font-great-vibes);
+  --shadow-soft: 0 10px 30px rgba(232, 160, 191, 0.22);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  color-scheme: light;
+}
+
+html,
+body {
+  min-height: 100%;
+  background: var(--color-cream);
+  color: var(--color-rose-ink);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  background-image:
+    radial-gradient(circle at 12% 8%, rgba(243, 229, 171, 0.45), transparent 28%),
+    radial-gradient(circle at 88% 0%, rgba(244, 167, 185, 0.28), transparent 32%),
+    linear-gradient(180deg, #fff8f0 0%, #fbf3e8 100%);
+}
+
+.font-serif {
+  font-family: var(--font-playfair), Georgia, serif;
+}
+
+.font-script {
+  font-family: var(--font-great-vibes), cursive;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@keyframes confetti-fall {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(105vh) rotate(540deg);
+    opacity: 0.15;
+  }
+}
+
+@keyframes cart-bounce {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  30% {
+    transform: scale(1.18) rotate(-8deg);
+  }
+  60% {
+    transform: scale(0.94) rotate(6deg);
+  }
+}
+
+.cart-bounce {
+  animation: cart-bounce 0.7s ease;
+}
+
+@keyframes heart-pop {
+  0% {
+    transform: scale(1);
+  }
+  40% {
+    transform: scale(1.28);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.heart-pop.is-loved {
+  color: #c23b5a;
+  animation: heart-pop 0.45s ease;
+}
+
+@keyframes sparkle {
+  0%,
+  100% {
+    opacity: 0.25;
+    transform: scale(0.7);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.15);
+  }
+}
+
+.sparkle {
+  animation: sparkle 2.4s ease-in-out infinite;
+}
+
+.delay-200 {
+  animation-delay: 0.2s;
+}
+.delay-500 {
+  animation-delay: 0.5s;
+}
+.delay-700 {
+  animation-delay: 0.7s;
+}
+
+@keyframes floaty {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.floaty {
+  animation: floaty 3.6s ease-in-out infinite;
+}
+
+@keyframes lid-open {
+  0% {
+    transform: rotateX(0deg);
+  }
+  100% {
+    transform: rotateX(-118deg);
+  }
+}
+
+.lid-open {
+  transform-origin: bottom center;
+  animation: lid-open 0.9s ease forwards;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+.pay-shimmer {
+  background: linear-gradient(90deg, #e88aa3, #d4af37, #e88aa3);
+  background-size: 200% 100%;
+  animation: shimmer 1.1s linear infinite;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
 }

@@ -18,7 +18,7 @@ export function ProductCard({ product }: { product: Product }) {
   return (
     <article className="relative flex flex-col overflow-hidden rounded-3xl border border-blush-200/80 bg-white shadow-soft">
       {burst > 0 && <ConfettiBurst show key={burst} pieces={28} />}
-      <Link href={`/product/${product.id}`} className="block">
+      <Link href={`/product/${product.id}`} className="block" aria-label={name}>
         <div className="relative aspect-square">
           <ProductImage product={product} />
           {product.flashSale && (
