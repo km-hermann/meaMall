@@ -61,13 +61,15 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
   const [order, setOrder] = useState<Order | null>(null);
 
   useEffect(() => {
-    setLocaleState(readJson<Locale>(STORAGE_KEYS.locale, "fr"));
-    setMuted(readJson<boolean>(STORAGE_KEYS.muted, false));
-    setCart(readJson<CartLine[]>(STORAGE_KEYS.cart, []));
-    setFavs(readJson<string[]>(STORAGE_KEYS.favs, []));
-    setPromoApplied(readJson<boolean>(STORAGE_KEYS.promo, false));
-    setOrder(readJson<Order | null>(STORAGE_KEYS.order, null));
-    setReady(true);
+    queueMicrotask(() => {
+      setLocaleState(readJson<Locale>(STORAGE_KEYS.locale, "fr"));
+      setMuted(readJson<boolean>(STORAGE_KEYS.muted, false));
+      setCart(readJson<CartLine[]>(STORAGE_KEYS.cart, []));
+      setFavs(readJson<string[]>(STORAGE_KEYS.favs, []));
+      setPromoApplied(readJson<boolean>(STORAGE_KEYS.promo, false));
+      setOrder(readJson<Order | null>(STORAGE_KEYS.order, null));
+      setReady(true);
+    });
   }, []);
 
   useEffect(() => {

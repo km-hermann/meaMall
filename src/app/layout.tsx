@@ -22,8 +22,15 @@ const greatVibes = Great_Vibes({
 });
 
 export const metadata: Metadata = {
-  title: "Mea Mall 👑",
-  description: "Boutique privée pour Mea la Milliardaire — joyeux anniversaire.",
+  title: "Mea Mall 👑 | La Boutique Exclusive de Mea La Milliardaire",
+  description:
+    "Boutique privée pour le 25ème anniversaire de Mea La Milliardaire. Tout est offert avec le code VIP 🎀✨",
+  openGraph: {
+    title: "Mea Mall 👑 | Joyeux 25ème Anniversaire Mea !",
+    description:
+      "Bienvenue dans ton centre commercial privé. Remplis ton panier et prépare-toi pour ta surprise 💌",
+    type: "website",
+  },
   icons: { icon: "/favicon.svg" },
 };
 

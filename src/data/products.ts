@@ -77,13 +77,13 @@ export const products: Product[] = [
     category: "appliances",
     name_fr: "Micro-ondes rose champagne",
     name_en: "Champagne-pink microwave",
-    price: 89000,
+    price: 89,
     rating: 4.8,
     description_fr:
       "Réchauffe les restes… et un peu l’ego. Ding ! C’est prêt, Milliardaire.",
     description_en:
       "Reheats leftovers — and a little bit of ego. Ding! Dinner is served, billionaire.",
-    image: "",
+    image: "/products/microwave.webp",
     art: "microwave",
     bestseller: true,
     flashSale: true,
@@ -93,13 +93,13 @@ export const products: Product[] = [
     category: "appliances",
     name_fr: "Mixeur à smoothies velours",
     name_en: "Velvet smoothie mixer",
-    price: 42000,
+    price: 45,
     rating: 4.7,
     description_fr:
       "Fruits, glace, et un soupçon de dramatique. Tes matins vont applaudir.",
     description_en:
       "Fruit, ice, and a pinch of drama. Your mornings will applaud.",
-    image: "",
+    image: "/products/smoothie-mixer.webp",
     art: "smoothie",
     bestseller: true,
   },
@@ -108,13 +108,13 @@ export const products: Product[] = [
     category: "appliances",
     name_fr: "Blender / robot multifonction puissant",
     name_en: "Power blender & multi-function robot",
-    price: 125000,
+    price: 125,
     rating: 4.9,
     description_fr:
       "Il mixe, il hache, il impressionne les invités. Presque un sous-chef.",
     description_en:
       "It blends, it chops, it impresses guests. Basically a sous-chef.",
-    image: "",
+    image: "/products/power-blender.jpg",
     art: "blender",
     bestseller: true,
   },
@@ -123,13 +123,13 @@ export const products: Product[] = [
     category: "appliances",
     name_fr: "Grille-pain doré matin",
     name_en: "Golden-morning toaster",
-    price: 28000,
+    price: 29,
     rating: 4.6,
     description_fr:
       "Deux tranches croustillantes, zéro compromis. Le petit-déj a un trône.",
     description_en:
       "Two crunchy slices, zero compromise. Breakfast gets a throne.",
-    image: "",
+    image: "/products/toaster.jpg",
     art: "toaster",
   },
   {
@@ -137,13 +137,13 @@ export const products: Product[] = [
     category: "appliances",
     name_fr: "Bouilloire électrique nacrée",
     name_en: "Pearl electric kettle",
-    price: 24500,
+    price: 25,
     rating: 4.5,
     description_fr:
       "L’eau bout plus vite quand on s’appelle Mea. C’est scientifique.",
     description_en:
       "Water boils faster when your name is Mea. It’s science.",
-    image: "",
+    image: "/products/kettle.webp",
     art: "kettle",
   },
   {
@@ -151,13 +151,13 @@ export const products: Product[] = [
     category: "appliances",
     name_fr: "Robot pâtissier princesse",
     name_en: "Princess stand mixer",
-    price: 185000,
+    price: 189,
     rating: 4.9,
     description_fr:
       "Gâteaux, crèmes, et un peu de royauté dans la pâte. Fouette comme une star.",
     description_en:
       "Cakes, cream, and a little royalty in the batter. Whisk like a star.",
-    image: "",
+    image: "/products/stand-mixer.jpg",
     art: "mixer",
     bestseller: true,
   },
@@ -166,13 +166,13 @@ export const products: Product[] = [
     category: "appliances",
     name_fr: "Aspirateur nuage de soie",
     name_en: "Silk-cloud vacuum",
-    price: 98000,
+    price: 99,
     rating: 4.6,
     description_fr:
       "Les miettes n’ont plus aucune chance. Ton salon respire le palace.",
     description_en:
       "Crumbs don’t stand a chance. Your living room breathes palace air.",
-    image: "",
+    image: "/products/vacuum.jpg",
     art: "vacuum",
   },
   {
@@ -180,13 +180,13 @@ export const products: Product[] = [
     category: "cookware",
     name_fr: "Ensemble de casseroles or-rose",
     name_en: "Rose-gold casserole set",
-    price: 76000,
+    price: 79,
     rating: 4.8,
     description_fr:
       "Cinq casseroles qui promettent sauces veloutées et compliments infinis.",
     description_en:
       "Five pots that promise silky sauces and endless compliments.",
-    image: "",
+    image: "/products/pots.avif",
     art: "pots",
     bestseller: true,
   },
@@ -195,13 +195,13 @@ export const products: Product[] = [
     category: "cookware",
     name_fr: "Ensemble de poêles antiadhésives",
     name_en: "Non-stick frying pan set",
-    price: 54000,
+    price: 55,
     rating: 4.7,
     description_fr:
       "Rien n’accroche — sauf les regards. Œufs, crêpes, victoires.",
     description_en:
       "Nothing sticks — except compliments. Eggs, crêpes, victories.",
-    image: "",
+    image: "/products/pans.webp",
     art: "pans",
   },
   {
@@ -209,12 +209,12 @@ export const products: Product[] = [
     category: "tableware",
     name_fr: "Service d’assiettes porcelaine blush",
     name_en: "Blush porcelain plate set",
-    price: 48000,
+    price: 49,
     rating: 4.8,
     description_fr:
       "Douze assiettes. Une table de fête, même un mardi soir.",
     description_en: "Twelve plates. A feast table, even on a Tuesday.",
-    image: "",
+    image: "/products/plates.jpg",
     art: "plates",
     bestseller: true,
   },
@@ -223,13 +223,13 @@ export const products: Product[] = [
     category: "tableware",
     name_fr: "Ensemble de bols nuage",
     name_en: "Cloud bowl set",
-    price: 22000,
+    price: 22,
     rating: 4.6,
     description_fr:
       "Céréales, soupes, secrets. Ces bols savent garder un peu de magie.",
     description_en:
       "Cereal, soup, secrets. These bowls know how to keep a little magic.",
-    image: "",
+    image: "/products/bowls.webp",
     art: "bowls",
   },
   {
@@ -237,13 +237,13 @@ export const products: Product[] = [
     category: "tableware",
     name_fr: "Verres à eau et à jus cristal doux",
     name_en: "Soft crystal water & juice glasses",
-    price: 19500,
+    price: 19,
     rating: 4.7,
     description_fr:
       "L’eau a meilleur goût quand le verre brille. Santé, Milliardaire.",
     description_en:
       "Water tastes better in a sparkling glass. Cheers, billionaire.",
-    image: "",
+    image: "/products/glasses.avif",
     art: "glasses",
   },
   {
@@ -251,13 +251,13 @@ export const products: Product[] = [
     category: "tableware",
     name_fr: "Tasses à café et à thé dentelle",
     name_en: "Lace coffee & tea cups",
-    price: 26000,
+    price: 25,
     rating: 4.8,
     description_fr:
       "Le café devient un rendez-vous. L’anse est trop mignonne, c’est officiel.",
     description_en:
       "Coffee becomes a date. The handle is officially too cute.",
-    image: "",
+    image: "/products/cups.webp",
     art: "cups",
   },
   {
@@ -265,13 +265,13 @@ export const products: Product[] = [
     category: "tableware",
     name_fr: "Ensemble de couverts lumière d’or",
     name_en: "Gold-light cutlery set",
-    price: 39000,
+    price: 39,
     rating: 4.7,
     description_fr:
       "Fourchettes qui ont de l’allure. Même les pâtes se tiennent droites.",
     description_en:
       "Forks with presence. Even pasta sits up straighter.",
-    image: "",
+    image: "/products/cutlery.avif",
     art: "cutlery",
   },
   {
@@ -279,12 +279,12 @@ export const products: Product[] = [
     category: "tableware",
     name_fr: "Plateau de service cérémonie",
     name_en: "Ceremony serving tray",
-    price: 17500,
+    price: 18,
     rating: 4.5,
     description_fr:
       "Entre comme une reine, sers le thé comme une légende.",
     description_en: "Enter like a queen, serve tea like a legend.",
-    image: "",
+    image: "/products/tray.jpg",
     art: "tray",
   },
   {
@@ -292,13 +292,13 @@ export const products: Product[] = [
     category: "tableware",
     name_fr: "Saladier élégant Grand Soir",
     name_en: "Grand Soir elegant salad bowl",
-    price: 21000,
+    price: 21,
     rating: 4.6,
     description_fr:
       "Salade, fruits, ou simplement poser au centre pour le style.",
     description_en:
       "Salad, fruit, or just sit pretty in the middle of the table.",
-    image: "",
+    image: "/products/salad-bowl.webp",
     art: "salad",
   },
   {
@@ -306,13 +306,13 @@ export const products: Product[] = [
     category: "storage",
     name_fr: "Bocaux (riz, pâtes, farine, sucre)",
     name_en: "Jars (rice, pasta, flour, sugar)",
-    price: 18500,
+    price: 19,
     rating: 4.8,
     description_fr:
       "Quatre bocaux, zéro bazar. Ton garde-manger vient de signer un contrat de luxe.",
     description_en:
       "Four jars, zero chaos. Your pantry just signed a luxury contract.",
-    image: "",
+    image: "/products/jars.webp",
     art: "jars",
     bestseller: true,
   },
@@ -321,13 +321,13 @@ export const products: Product[] = [
     category: "storage",
     name_fr: "Boîtes à épices bijou",
     name_en: "Jewel spice boxes",
-    price: 14500,
+    price: 15,
     rating: 4.7,
     description_fr:
       "Le cumin a enfin une suite présidentielle. Tes plats vont le sentir.",
     description_en:
       "Cumin finally gets a presidential suite. Your dishes will notice.",
-    image: "",
+    image: "/products/spice-boxes.avif",
     art: "spices",
   },
   {
@@ -335,13 +335,13 @@ export const products: Product[] = [
     category: "tech",
     name_fr: "AirPods — édition Milliardaire",
     name_en: "AirPods — Billionaire edition",
-    price: 165000,
+    price: 179,
     rating: 4.9,
     description_fr:
       "Le monde en sourdine, ta playlist en VIP. Petites, blanches, légendaires.",
     description_en:
       "Mute the world, VIP your playlist. Small, white, legendary.",
-    image: "",
+    image: "/products/airpods.jpg",
     art: "airpods",
     bestseller: true,
     flashSale: true,

@@ -33,8 +33,8 @@ export default function WelcomePage() {
       <p className="mt-2 text-center text-sm text-rose-ink/60">{t("startHint")}</p>
 
       <Link
-        href="/shop"
-        className="mt-8 flex h-14 min-w-[240px] items-center justify-center rounded-full bg-blush-500 px-8 text-base font-semibold text-white shadow-soft"
+        href="/wishlist"
+        className="mt-8 flex h-14 min-w-[240px] items-center justify-center rounded-full bg-blush-500 px-8 text-base font-semibold text-white shadow-soft transition-transform hover:scale-105"
       >
         {t("welcomeCta")}
       </Link>

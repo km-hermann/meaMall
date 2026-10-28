@@ -12,8 +12,10 @@ export default function TrackPage() {
   const [step, setStep] = useState(0);
 
   useEffect(() => {
-    const saved = Number(localStorage.getItem(STORAGE_KEYS.tracking) || 0);
-    setStep(Number.isFinite(saved) ? saved : 0);
+    queueMicrotask(() => {
+      const saved = Number(localStorage.getItem(STORAGE_KEYS.tracking) || 0);
+      setStep(Number.isFinite(saved) ? saved : 0);
+    });
   }, []);
 
   useEffect(() => {

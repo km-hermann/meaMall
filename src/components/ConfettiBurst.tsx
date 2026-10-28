@@ -4,6 +4,11 @@ import { useEffect, useMemo, useState } from "react";
 
 const COLORS = ["#f4a7b9", "#d4af37", "#fff6ea", "#e8a0bf", "#c9a227", "#ffffff"];
 
+function pseudoRandom(seed: number) {
+  const x = Math.sin(seed + 1) * 10000;
+  return x - Math.floor(x);
+}
+
 export function ConfettiBurst({
   show,
   pieces = 42,
@@ -12,23 +17,29 @@ export function ConfettiBurst({
   pieces?: number;
 }) {
   const [visible, setVisible] = useState(show);
+  const [prevShow, setPrevShow] = useState(show);
+
+  if (show !== prevShow) {
+    setPrevShow(show);
+    setVisible(show);
+  }
+
   const bits = useMemo(
     () =>
       Array.from({ length: pieces }, (_, i) => ({
         id: i,
-        left: Math.random() * 100,
-        delay: Math.random() * 0.25,
-        dur: 0.9 + Math.random() * 0.7,
-        rot: Math.random() * 360,
+        left: pseudoRandom(i * 3 + 1) * 100,
+        delay: pseudoRandom(i * 5 + 2) * 0.25,
+        dur: 0.9 + pseudoRandom(i * 7 + 3) * 0.7,
+        rot: pseudoRandom(i * 11 + 4) * 360,
         color: COLORS[i % COLORS.length],
-        size: 6 + Math.random() * 8,
+        size: 6 + pseudoRandom(i * 13 + 5) * 8,
       })),
-    [pieces, show],
+    [pieces],
   );
 
   useEffect(() => {
     if (!show) return;
-    setVisible(true);
     const t = window.setTimeout(() => setVisible(false), 1600);
     return () => window.clearTimeout(t);
   }, [show]);

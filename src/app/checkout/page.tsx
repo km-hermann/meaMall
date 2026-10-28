@@ -10,7 +10,7 @@ import { playSuccess } from "@/lib/sound";
 
 export default function CheckoutPage() {
   const router = useRouter();
-  const { t, cart, promoApplied, placeOrder, muted } = useApp();
+  const { t, locale, cart, promoApplied, placeOrder, muted } = useApp();
   const [status, setStatus] = useState<"idle" | "paying" | "paid">("idle");
 
   const { subtotal, total, count } = useMemo(() => {
@@ -38,6 +38,8 @@ export default function CheckoutPage() {
     router.push("/order");
   }
 
+  const city = locale === "fr" ? gift.herCity : gift.herCityEn;
+
   return (
     <div className="mx-auto w-full max-w-3xl px-4 py-5">
       <h1 className="font-serif text-3xl">{t("checkoutTitle")}</h1>
@@ -48,8 +50,8 @@ export default function CheckoutPage() {
         </h2>
         <p className="mt-2 font-serif text-lg">{gift.herNickname}</p>
         <p className="text-sm text-rose-ink/80">{t("addressLine")}</p>
-        <p className="mt-1 text-sm">
-          {t("city")} : {gift.herCity}
+        <p className="mt-1 text-sm font-medium">
+          {t("city")} : {city} 🇩🇪
         </p>
       </section>
 
