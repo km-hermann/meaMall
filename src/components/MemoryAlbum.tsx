@@ -125,23 +125,6 @@ export function MemoryAlbum() {
         })}
       </div>
 
-      {/* Graduation & Medical Milestone Finale Card */}
-      <div className="mt-12 rounded-3xl border border-gold bg-gradient-to-br from-gold-soft via-white to-blush-100 p-6 text-center shadow-soft">
-        <span className="text-4xl" aria-hidden>
-          🩺👑🎓
-        </span>
-        <h4 className="mt-2 font-serif text-xl font-bold text-rose-ink sm:text-2xl">
-          {locale === "fr"
-            ? "Checkpoint Ultime : Les 25 ans & Docteure Mea !"
-            : "Final Checkpoint: 25 & Doctor Mea!"}
-        </h4>
-        <p className="mt-2 text-sm leading-relaxed text-rose-ink/80 sm:text-base">
-          {locale === "fr"
-            ? "De tes 24 ans inoubliables jusqu'à ton diplôme de médecine en janvier, je suis à 100% derrière toi. Continue de briller comme une reine !"
-            : "From your unforgettable 24th birthday to your medical degree this January, I'm standing 100% behind you. Keep shining like a queen!"}
-        </p>
-      </div>
-
       {/* Lightbox Modal */}
       {selectedImage && (
         <div

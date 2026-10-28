@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { ConfettiBurst } from "@/components/ConfettiBurst";
+import { GrandFinale } from "@/components/GrandFinale";
 import { MemoryAlbum } from "@/components/MemoryAlbum";
 import { useApp } from "@/context/AppContext";
 import { gift } from "@/data/gift";
@@ -38,7 +39,7 @@ export default function SurprisePage() {
   useEffect(() => {
     if (muted && isMusicPlaying) {
       stopCelebrationAudio();
-      setIsMusicPlaying(false);
+      queueMicrotask(() => setIsMusicPlaying(false));
     }
   }, [muted, isMusicPlaying]);
 
@@ -150,6 +151,9 @@ export default function SurprisePage() {
 
           {/* Memory Album: Retrospective Checkpoints */}
           <MemoryAlbum />
+
+          {/* Grand Finale Reveal */}
+          <GrandFinale />
         </div>
       )}
     </div>
