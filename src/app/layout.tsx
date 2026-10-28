@@ -22,14 +22,36 @@ const greatVibes = Great_Vibes({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_SITE_URL || "https://meamall.vercel.app"
+  ),
   title: "Mea Mall 👑 | La Boutique Exclusive de Mea La Milliardaire",
   description:
     "Boutique privée pour le 25ème anniversaire de Mea La Milliardaire. Tout est offert avec le code VIP 🎀✨",
   openGraph: {
     title: "Mea Mall 👑 | Joyeux 25ème Anniversaire Mea !",
     description:
-      "Bienvenue dans ton centre commercial privé. Remplis ton panier et prépare-toi pour ta surprise 💌",
+      "Bienvenue dans ton centre commercial privé VIP. Remplis ton panier à 0 € et prépare-toi pour ta surprise 💌✨",
+    url: "/",
+    siteName: "Mea Mall",
+    locale: "fr_FR",
     type: "website",
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Mea Mall 👑 - Joyeux 25ème Anniversaire Mea La Milliardaire",
+        type: "image/jpeg",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Mea Mall 👑 | Joyeux 25ème Anniversaire Mea !",
+    description:
+      "Bienvenue dans ton centre commercial privé VIP. Remplis ton panier à 0 € et prépare-toi pour ta surprise 💌✨",
+    images: ["/og-image.jpg"],
   },
   icons: { icon: "/favicon.svg" },
 };
