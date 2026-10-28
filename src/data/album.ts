@@ -143,6 +143,47 @@ export const albumCheckpoints: AlbumCheckpoint[] = [
   {
     id: "checkpoint-8",
     stepNumber: 8,
+    title_fr: "Les Racines d'Amour : Avec Maman au Cameroun 🇨🇲👩‍👧❤️",
+    title_en: "Roots of Love: With Mum in Cameroon 🇨🇲👩‍👧❤️",
+    date: "Souvenir Précieux",
+    location: "Cameroun 🇨🇲",
+    caption_fr:
+      "Ce moment inoubliable avec Maman quand vous étiez encore ensemble au Cameroun 🇨🇲❤️. Même avec les kilomètres qui séparent l'Allemagne et le pays, les prières, la fierté et l'amour infini de Maman t'accompagnent chaque jour !",
+    caption_en:
+      "This unforgettable moment with Mum back when you were still together in Cameroon 🇨🇲❤️. Even across the miles between Germany and home, Mum's infinite love, pride, and prayers walk beside you every single day!",
+    image: "/album/photo-mum.jpg",
+    altImages: [
+      "/album/photo-8.jpg",
+      "/album/photo-maman.jpg",
+      "/album/photo-mum.jpeg",
+      "/album/photo-mum.png",
+      "/album/photo-8.jpeg",
+    ],
+    placeholderHint: "Photo avec Maman au Cameroun 👩‍👧❤️ (ex: photo-mum.jpg ou photo-8.jpg)",
+  },
+  {
+    id: "checkpoint-9",
+    stepNumber: 9,
+    title_fr: "Complicité d'Âme : Avec sa « Sœur » Ange 👯‍♀️💖",
+    title_en: "Soul Sisters: An Unforgettable Month with Ange 👯‍♀️💖",
+    date: "1 Mois Inoubliable",
+    location: "Allemagne 🇩🇪",
+    caption_fr:
+      "Ce mois magique et mémorable passé ensemble en Allemagne avant qu'Ange ne reparte ! Plus qu'une amie, une véritable sœur de cœur. Des fous rires, des confidences et des souvenirs précieux gravés pour toujours.",
+    caption_en:
+      "That magical and memorable month spent together in Germany before Ange returned! More than a best friend, a true soul sister. Unstoppable laughter, heart-to-heart talks, and precious memories etched forever.",
+    image: "/album/photo-ange.jpg",
+    altImages: [
+      "/album/photo-9.jpg",
+      "/album/photo-ange.jpeg",
+      "/album/photo-ange.png",
+      "/album/photo-9.jpeg",
+    ],
+    placeholderHint: "Photo avec Ange en Allemagne 👯‍♀️💖 (ex: photo-ange.jpg ou photo-9.jpg)",
+  },
+  {
+    id: "checkpoint-10",
+    stepNumber: 10,
     title_fr: "Cap sur les 25 ans & Docteure Mea 👩‍⚕️👑",
     title_en: "Stepping into 25 & Dr. Mea 👩‍⚕️👑",
     date: "Vers l'Avenir",
@@ -151,12 +192,12 @@ export const albumCheckpoints: AlbumCheckpoint[] = [
       "Les 24 ans étaient magiques, mais le chapitre des 25 ans s'annonce grandiose avec la fin des études de médecine et la blouse blanche officielle. Tellement fier de toi grande sœur !",
     caption_en:
       "24 was amazing, but 25 is about to be legendary with the medical degree and the official white coat. So immensely proud of you big sister!",
-    image: "/album/photo-8.jpg",
+    image: "/album/photo-10.jpg",
     altImages: [
-      "/album/photo-8.jpeg",
-      "/album/photo-8.png",
+      "/album/photo-10.jpeg",
+      "/album/photo-10.png",
       "/album/photo-future.jpg",
     ],
-    placeholderHint: "Photo 8 : Cap sur les 25 ans / Projet ou sourire d'avenir 👩‍⚕️",
+    placeholderHint: "Photo 10 : Cap sur les 25 ans / Projet ou sourire d'avenir 👩‍⚕️",
   },
 ];

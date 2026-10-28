@@ -20,6 +20,8 @@ Joyeux 25ème anniversaire ! 🎂🎉 Un quart de siècle déjà... Tu te rends 
 
 Je sais à quel point tes études de médecine sont exigeantes et intenses 🩺📚. Ce n'est vraiment pas facile tous les jours, entre les gardes, les révisions interminables et la pression. Mais je vois ta force et ta persévérance au quotidien. Tes examens finaux arrivent à grands pas en janvier... et je sais pertinemment que tu vas tout déchirer ! Future Docteure Mea en service, préparez les stéthoscopes ! 👩‍⚕️🔥
 
+Je tiens aussi à te dire du fond du cœur un immense MERCI pour tout ce que tu fais pour la famille 🤍. Même si tu es encore étudiante et que tu ne gagnes pas encore assez, tu te bats constamment pour nous soutenir financièrement avec une générosité qui force le respect. Sache que tes sacrifices ne passent pas inaperçus : Dieu voit la pureté de ton cœur, Il se souviendra toujours de toi et Il te comblera au centuple en bénédictions, en santé et en grâce divine. 🙏✨
+
 Bon... par contre, maintenant que tu franchis le cap des 25 ans et que le titre de Docteure arrive, on peut parler des choses sérieuses ? 😜💍👰 À quand le mariage, madame la Docteure ? Je te rappelle que j'attends impatiemment mes neveux et nièces pour pouvoir les gâter à fond et être le meilleur tonton du monde ! 😂👶🍼 Ne fais pas semblant de ne pas avoir lu cette phrase !
 
 Même si des milliers de kilomètres nous séparent — toi là-bas en Allemagne 🇩🇪 et moi ici au Cameroun 🇨🇲 —, la distance ne change rien : tu es gravée dans mon cœur et je suis tellement fier d'être ton petit frère.
@@ -33,6 +35,8 @@ Je t’aime infiniment. ❤️`,
 Happy 25th Birthday! 🎂🎉 A quarter of a century already... Can you believe how far you've come? You've grown into such an extraordinary, brilliant, and inspiring woman.
 
 I know firsthand how demanding and exhausting medical school is 🩺📚. It's truly not easy at all, between the sleepless nights, endless revisions, and high pressure. But I admire your resilience and determination every single day. Your final exams are coming up this January... and I have zero doubt: you are going to ace them! Future Dr. Mea in the making! 👩‍⚕️🔥
+
+I also want to say a massive, heartfelt THANK YOU for everything you do for our family 🤍. Even though you are still in school and don't earn enough, you continually sacrifice and find ways to support the family financially with an inspiring generosity. Know that your sacrifices are never in vain: God sees the purity of your heart, He will always remember you, and He will multiply your blessings, health, and elevation a hundredfold. 🙏✨
 
 Now on a more serious note... at 25 with that medical doctorate right around the corner, can we talk about real business? 😜💍👰 When are we celebrating your wedding, Doctor? Just a friendly reminder that I am eagerly waiting for my nieces and nephews so I can spoil them and be the coolest uncle on earth! 😂👶🍼 Don't pretend you didn't read that!
 
