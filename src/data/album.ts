@@ -63,21 +63,6 @@ export const albumCheckpoints: AlbumCheckpoint[] = [
   {
     id: "checkpoint-4",
     stepNumber: 4,
-    title_fr: "Nostalgie & Pensées du Cameroun 🇨🇲❤️🇩🇪",
-    title_en: "Nostalgia & Love from Cameroon 🇨🇲❤️🇩🇪",
-    date: "Pont d'Amour",
-    location: "Yaoundé 🇨🇲 ➔ Neumünster 🇩🇪",
-    caption_fr:
-      "Regarder tes photos et vidéos de tes 24 ans m'a donné des frissons de nostalgie. Être séparés par les frontières n'a jamais affaibli notre complicité fraternelle.",
-    caption_en:
-      "Looking back at your 24th birthday photos and videos gave me sweet chills of nostalgia. Being oceans apart has never weakened our brother-sister bond.",
-    image: "/album/photo-4.jpg",
-    altImages: ["/album/photo-4.jpeg", "/album/photo-4.png"],
-    placeholderHint: "Photo 4 : Un moment complice / Un souvenir nostalgique",
-  },
-  {
-    id: "checkpoint-5",
-    stepNumber: 5,
     title_fr: "Le Festin Royal : Au Merveilleux Buffet 🍽️✨",
     title_en: "The Royal Feast: At the Wonderful Buffet 🍽️✨",
     date: "Le Festin",
@@ -86,28 +71,38 @@ export const albumCheckpoints: AlbumCheckpoint[] = [
       "Quand la Milliardaire passe à table ! Te voir te servir à ce délicieux buffet avec un immense sourire... Un vrai festin digne d'une reine pour honorer tes 24 ans.",
     caption_en:
       "When the Billionaire heads to the feast! Seeing you serve yourself from that wonderful buffet with a radiant smile... A true royal feast to celebrate your 24th birthday.",
+    image: "/album/photo-4.jpg",
+    altImages: [
+      "/album/photo-buffet.jpg",
+      "/album/photo-buffet.jpeg",
+      "/album/photo-buffet.png",
+      "/album/photo-4.jpeg",
+    ],
+    placeholderHint: "Photo au buffet : Se servant au délicieux buffet 🍽️",
+  },
+  {
+    id: "checkpoint-5",
+    stepNumber: 5,
+    title_fr: "Complicité Fraternelle : Avec Crepinho 👦❤️👑",
+    title_en: "Complicité Fraternelle: With Crepinho 👦❤️👑",
+    date: "Famille Réunie",
+    location: "Neumünster 🇩🇪",
+    caption_fr:
+      "Un des moments les plus touchants pour moi ! Même si j'étais à distance au Cameroun, voir Crepinho à tes côtés en Allemagne pour célébrer tes 24 ans m'a réchauffé le cœur. Les Mea ensemble, une force inébranlable !",
+    caption_en:
+      "One of the most touching moments for me! Even from afar in Cameroon, seeing our brother right beside you in Germany to celebrate your 24th warmed my soul. The Mea family united, an unbreakable bond!",
     image: "/album/photo-5.jpg",
-    altImages: ["/album/photo-buffet.jpg", "/album/photo-buffet.jpeg", "/album/photo-5.jpeg", "/album/photo-5.png"],
-    placeholderHint: "Photo 5 : Se servant au merveilleux buffet 🍽️",
+    altImages: [
+      "/album/photo-brother.jpg",
+      "/album/photo-brother.jpeg",
+      "/album/photo-brother.png",
+      "/album/photo-5.jpeg",
+    ],
+    placeholderHint: "Photo avec Crepinho : À la fête d'anniversaire 👦❤️",
   },
   {
     id: "checkpoint-6",
     stepNumber: 6,
-    title_fr: "Complicité Fraternelle : Avec Notre Frère 👦❤️👑",
-    title_en: "Brotherly Love: With Our Brother 👦❤️👑",
-    date: "Famille Réunie",
-    location: "Neumünster 🇩🇪",
-    caption_fr:
-      "Un des moments les plus touchants pour moi ! Même si j'étais à distance au Cameroun, voir notre frère à tes côtés en Allemagne pour célébrer tes 24 ans m'a réchauffé le cœur. Les Mea ensemble, une force inébranlable !",
-    caption_en:
-      "One of the most touching moments for me! Even from afar in Cameroon, seeing our brother right beside you in Germany to celebrate your 24th warmed my soul. The Mea family united, an unbreakable bond!",
-    image: "/album/photo-6.jpg",
-    altImages: ["/album/photo-brother.jpg", "/album/photo-brother.jpeg", "/album/photo-6.jpeg", "/album/photo-6.png"],
-    placeholderHint: "Photo 6 : Avec notre frère à la fête d'anniversaire 👦❤️",
-  },
-  {
-    id: "checkpoint-7",
-    stepNumber: 7,
     title_fr: "La Montagne de Cadeaux de la Fête 🎁🎀",
     title_en: "The Billionaire Gift Mountain 🎁🎀",
     date: "Célébration",
@@ -116,9 +111,34 @@ export const albumCheckpoints: AlbumCheckpoint[] = [
       "Regarde tous ces magnifiques paquets et attentions reçus lors de ta soirée ! Tu as été gâtée comme une véritable reine, et tu mérites chaque étincelle d'amour et de joie de ce monde.",
     caption_en:
       "Look at all those wonderful gifts and surprises received during your party! Spoiled like true royalty, and you deserve every single ounce of joy and love this world has to offer.",
+    image: "/album/photo-6.jpg",
+    altImages: [
+      "/album/photo-gifts.jpg",
+      "/album/photo-gifts.jpeg",
+      "/album/photo-gifts.png",
+      "/album/photo-6.jpeg",
+    ],
+    placeholderHint: "Photo des cadeaux : Les cadeaux reçus à la fête 🎁",
+  },
+  {
+    id: "checkpoint-7",
+    stepNumber: 7,
+    title_fr: "Nostalgie & Pensées du Cameroun 🇨🇲❤️🇩🇪",
+    title_en: "Nostalgia & Love from Cameroon 🇨🇲❤️🇩🇪",
+    date: "Pont d'Amour",
+    location: "Yaoundé 🇨🇲 ➔ Neumünster 🇩🇪",
+    caption_fr:
+      "Regarder tes photos et vidéos de tes 24 ans m'a donné des frissons de nostalgie. Être séparés par les frontières n'a jamais affaibli notre complicité fraternelle.",
+    caption_en:
+      "Looking back at your 24th birthday photos and videos gave me sweet chills of nostalgia. Being oceans apart has never weakened our brother-sister bond.",
     image: "/album/photo-7.jpg",
-    altImages: ["/album/photo-gifts.jpg", "/album/photo-gifts.jpeg", "/album/photo-7.jpeg", "/album/photo-7.png"],
-    placeholderHint: "Photo 7 : La photo des cadeaux reçus à la fête 🎁",
+    altImages: [
+      "/album/photo-cameroun.jpg",
+      "/album/photo-4.jpg",
+      "/album/photo-7.jpeg",
+      "/album/photo-7.png",
+    ],
+    placeholderHint: "Photo Nostalgie : Un moment complice / Pensées du Cameroun",
   },
   {
     id: "checkpoint-8",
@@ -132,7 +152,11 @@ export const albumCheckpoints: AlbumCheckpoint[] = [
     caption_en:
       "24 was amazing, but 25 is about to be legendary with the medical degree and the official white coat. So immensely proud of you big sister!",
     image: "/album/photo-8.jpg",
-    altImages: ["/album/photo-8.jpeg", "/album/photo-8.png", "/album/photo-future.jpg"],
+    altImages: [
+      "/album/photo-8.jpeg",
+      "/album/photo-8.png",
+      "/album/photo-future.jpg",
+    ],
     placeholderHint: "Photo 8 : Cap sur les 25 ans / Projet ou sourire d'avenir 👩‍⚕️",
   },
 ];
