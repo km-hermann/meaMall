@@ -83,8 +83,8 @@ export const albumCheckpoints: AlbumCheckpoint[] = [
   {
     id: "checkpoint-5",
     stepNumber: 5,
-    title_fr: "Complicité Fraternelle : Avec Crepinho 👦❤️👑",
-    title_en: "Complicité Fraternelle: With Crepinho 👦❤️👑",
+    title_fr: "Complicité Fraternelle : Avec Mr. Crepinho 👦❤️👑",
+    title_en: "Complicité Fraternelle: With Mr. Crepinho 👦❤️👑",
     date: "Famille Réunie",
     location: "Neumünster 🇩🇪",
     caption_fr:
