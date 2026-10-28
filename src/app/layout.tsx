@@ -23,7 +23,10 @@ const greatVibes = Great_Vibes({
 
 export const metadata: Metadata = {
   metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL || "https://meamall.vercel.app"
+    process.env.NEXT_PUBLIC_SITE_URL ||
+      (process.env.VERCEL_PROJECT_PRODUCTION_URL
+        ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+        : "https://hbd-mea-la-milliardaire.vercel.app")
   ),
   title: "Mea Mall 👑 | La Boutique Exclusive de Mea La Milliardaire",
   description:
