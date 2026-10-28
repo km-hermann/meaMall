@@ -32,7 +32,14 @@ function tone(
   osc.stop(start + dur + 0.02);
 }
 
-// Chime note with soft bell harmonic
+// Controller for background celebration audio
+let activeAudioElement: HTMLAudioElement | null = null;
+let synthLoopTimeout: number | null = null;
+let isAudioPlaying = false;
+let celebrationMasterGain: GainNode | null = null;
+let activeOscillators: OscillatorNode[] = [];
+
+// Chime note with soft bell harmonic connected to master gain
 function musicBoxNote(
   audio: AudioContext,
   freq: number,
@@ -40,6 +47,8 @@ function musicBoxNote(
   dur: number,
   volume = 0.09,
 ) {
+  if (!celebrationMasterGain) return;
+
   // Fundamental
   const osc1 = audio.createOscillator();
   const g1 = audio.createGain();
@@ -49,9 +58,7 @@ function musicBoxNote(
   g1.gain.linearRampToValueAtTime(volume, start + 0.015);
   g1.gain.exponentialRampToValueAtTime(0.0001, start + dur);
   osc1.connect(g1);
-  g1.connect(audio.destination);
-  osc1.start(start);
-  osc1.stop(start + dur + 0.02);
+  g1.connect(celebrationMasterGain);
 
   // Sparkly overtone (2nd harmonic)
   const osc2 = audio.createOscillator();
@@ -60,11 +67,23 @@ function musicBoxNote(
   osc2.frequency.value = freq * 2;
   g2.gain.setValueAtTime(0, start);
   g2.gain.linearRampToValueAtTime(volume * 0.35, start + 0.01);
-  g2.gain.exponentialRampToValueAtTime(0.0001, start + (dur * 0.6));
+  g2.gain.exponentialRampToValueAtTime(0.0001, start + dur * 0.6);
   osc2.connect(g2);
-  g2.connect(audio.destination);
+  g2.connect(celebrationMasterGain);
+
+  activeOscillators.push(osc1, osc2);
+
+  osc1.onended = () => {
+    activeOscillators = activeOscillators.filter((o) => o !== osc1);
+  };
+  osc2.onended = () => {
+    activeOscillators = activeOscillators.filter((o) => o !== osc2);
+  };
+
+  osc1.start(start);
+  osc1.stop(start + dur + 0.02);
   osc2.start(start);
-  osc2.stop(start + (dur * 0.6) + 0.02);
+  osc2.stop(start + dur * 0.6 + 0.02);
 }
 
 export async function playDing() {
@@ -86,13 +105,19 @@ export async function playSuccess() {
   tone(audio, 784, t + 0.24, 0.22);
 }
 
-// Controller for background celebration audio
-let activeAudioElement: HTMLAudioElement | null = null;
-let synthLoopTimeout: number | null = null;
-let isAudioPlaying = false;
+export function isCelebrationPlaying() {
+  return isAudioPlaying;
+}
 
 export function stopCelebrationAudio() {
   isAudioPlaying = false;
+
+  if (synthLoopTimeout) {
+    window.clearTimeout(synthLoopTimeout);
+    synthLoopTimeout = null;
+  }
+
+  // 1. Immediately pause and reset HTML5 Audio element
   if (activeAudioElement) {
     try {
       activeAudioElement.pause();
@@ -102,10 +127,29 @@ export function stopCelebrationAudio() {
     }
     activeAudioElement = null;
   }
-  if (synthLoopTimeout) {
-    window.clearTimeout(synthLoopTimeout);
-    synthLoopTimeout = null;
+
+  // 2. Immediately mute and disconnect master Web Audio gain
+  if (celebrationMasterGain && ctx) {
+    try {
+      celebrationMasterGain.gain.cancelScheduledValues(ctx.currentTime);
+      celebrationMasterGain.gain.setValueAtTime(0, ctx.currentTime);
+      celebrationMasterGain.disconnect();
+    } catch {
+      // ignore
+    }
+    celebrationMasterGain = null;
   }
+
+  // 3. Immediately stop and disconnect all scheduled oscillators
+  activeOscillators.forEach((osc) => {
+    try {
+      osc.stop();
+      osc.disconnect();
+    } catch {
+      // ignore
+    }
+  });
+  activeOscillators = [];
 }
 
 export async function startCelebrationAudio(onStateChange?: (playing: boolean) => void) {
@@ -122,6 +166,10 @@ export async function startCelebrationAudio(onStateChange?: (playing: boolean) =
     const playPromise = audio.play();
     if (playPromise !== undefined) {
       await playPromise;
+      if (!isAudioPlaying) {
+        audio.pause();
+        return;
+      }
       activeAudioElement = audio;
       audio.onended = () => {
         if (!isAudioPlaying) onStateChange?.(false);
@@ -132,13 +180,19 @@ export async function startCelebrationAudio(onStateChange?: (playing: boolean) =
     // If MP3 file not found or browser blocked, gracefully fallback to Web Audio synthesis!
   }
 
+  if (!isAudioPlaying) return;
+
   // 2. Web Audio Music Box Birthday Melody
   const audioCtx = context();
   if (!audioCtx) return;
   if (audioCtx.state === "suspended") await audioCtx.resume();
 
+  celebrationMasterGain = audioCtx.createGain();
+  celebrationMasterGain.gain.setValueAtTime(1, audioCtx.currentTime);
+  celebrationMasterGain.connect(audioCtx.destination);
+
   function playSong() {
-    if (!isAudioPlaying) return;
+    if (!isAudioPlaying || !celebrationMasterGain) return;
     const now = audioCtx!.currentTime;
 
     // Happy Birthday notes and timings [freq, duration, delay]

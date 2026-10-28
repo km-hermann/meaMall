@@ -19,6 +19,7 @@ export default function SurprisePage() {
   function handleOpen() {
     setOpen(true);
     if (!muted) {
+      setIsMusicPlaying(true);
       void startCelebrationAudio((playing) => setIsMusicPlaying(playing));
     }
   }
@@ -28,9 +29,18 @@ export default function SurprisePage() {
       stopCelebrationAudio();
       setIsMusicPlaying(false);
     } else {
+      setIsMusicPlaying(true);
       void startCelebrationAudio((playing) => setIsMusicPlaying(playing));
     }
   }
+
+  // Mute immediately if global mute is toggled from header
+  useEffect(() => {
+    if (muted && isMusicPlaying) {
+      stopCelebrationAudio();
+      setIsMusicPlaying(false);
+    }
+  }, [muted, isMusicPlaying]);
 
   useEffect(() => {
     return () => {
