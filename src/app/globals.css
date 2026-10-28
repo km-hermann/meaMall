@@ -168,6 +168,14 @@ body {
   animation: shimmer 1.1s linear infinite;
 }
 
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
 button,
 a {
   -webkit-tap-highlight-color: transparent;
