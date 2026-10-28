@@ -8,13 +8,28 @@ export function MemoryAlbum() {
   const { locale, t } = useApp();
   const [selectedImage, setSelectedImage] = useState<AlbumCheckpoint | null>(null);
   const [failedImages, setFailedImages] = useState<Record<string, boolean>>({});
+  const [imagePaths, setImagePaths] = useState<Record<string, string>>(() => {
+    const initial: Record<string, string> = {};
+    albumCheckpoints.forEach((cp) => {
+      initial[cp.id] = cp.image;
+    });
+    return initial;
+  });
 
-  function handleImageError(id: string) {
-    setFailedImages((prev) => ({ ...prev, [id]: true }));
+  function handleImageError(cp: AlbumCheckpoint) {
+    const current = imagePaths[cp.id] || cp.image;
+    const candidates = [cp.image, ...(cp.altImages || [])];
+    const currentIndex = candidates.indexOf(current);
+    if (currentIndex >= 0 && currentIndex < candidates.length - 1) {
+      const next = candidates[currentIndex + 1];
+      setImagePaths((prev) => ({ ...prev, [cp.id]: next }));
+    } else {
+      setFailedImages((prev) => ({ ...prev, [cp.id]: true }));
+    }
   }
 
   return (
-    <section className="mt-10 w-full">
+    <section className="mt-12 w-full">
       {/* Album Header */}
       <div className="text-center">
         <span className="inline-block rounded-full border border-gold/50 bg-gold-soft/70 px-4 py-1 text-xs font-semibold uppercase tracking-wider text-rose-ink">
@@ -32,6 +47,7 @@ export function MemoryAlbum() {
       <div className="relative mt-8 space-y-8 before:absolute before:bottom-6 before:left-5 before:top-4 before:w-0.5 before:bg-gradient-to-b before:from-gold before:via-blush-300 before:to-gold md:before:left-1/2 md:before:-translate-x-1/2">
         {albumCheckpoints.map((cp, idx) => {
           const isError = failedImages[cp.id];
+          const currentImg = imagePaths[cp.id] || cp.image;
           const title = locale === "fr" ? cp.title_fr : cp.title_en;
           const caption = locale === "fr" ? cp.caption_fr : cp.caption_en;
           const isEven = idx % 2 === 0;
@@ -70,19 +86,19 @@ export function MemoryAlbum() {
                   {title}
                 </h3>
 
-                {/* Photo Frame (Polaroid Inspired) */}
-                <div className="relative mt-3 overflow-hidden rounded-2xl bg-cream/50">
+                {/* Photo Frame (Polaroid Inspired, 4:5 Portrait Ratio) */}
+                <div className="relative mt-3 overflow-hidden rounded-2xl bg-cream/50 shadow-inner">
                   {!isError ? (
                     // eslint-disable-next-line @next/next/no-img-element
                     <img
-                      src={cp.image}
+                      src={currentImg}
                       alt={title}
-                      onError={() => handleImageError(cp.id)}
+                      onError={() => handleImageError(cp)}
                       onClick={() => setSelectedImage(cp)}
-                      className="aspect-[4/3] w-full cursor-pointer object-cover transition-transform duration-300 hover:scale-105"
+                      className="aspect-[4/5] w-full cursor-pointer object-cover transition-transform duration-300 hover:scale-[1.02]"
                     />
                   ) : (
-                    <div className="flex aspect-[4/3] w-full flex-col items-center justify-center border-2 border-dashed border-blush-300 bg-cream/40 p-4 text-center">
+                    <div className="flex aspect-[4/5] w-full flex-col items-center justify-center border-2 border-dashed border-blush-300 bg-cream/40 p-4 text-center">
                       <span className="text-3xl" aria-hidden>
                         📸
                       </span>
@@ -110,7 +126,7 @@ export function MemoryAlbum() {
       </div>
 
       {/* Graduation & Medical Milestone Finale Card */}
-      <div className="mt-10 rounded-3xl border border-gold bg-gradient-to-br from-gold-soft via-white to-blush-100 p-6 text-center shadow-soft">
+      <div className="mt-12 rounded-3xl border border-gold bg-gradient-to-br from-gold-soft via-white to-blush-100 p-6 text-center shadow-soft">
         <span className="text-4xl" aria-hidden>
           🩺👑🎓
         </span>
@@ -129,31 +145,31 @@ export function MemoryAlbum() {
       {/* Lightbox Modal */}
       {selectedImage && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4 backdrop-blur-sm"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/85 p-4 backdrop-blur-sm"
           onClick={() => setSelectedImage(null)}
         >
           <div
-            className="relative max-h-[90vh] max-w-lg overflow-hidden rounded-3xl bg-white p-4 text-center shadow-2xl"
+            className="relative flex max-h-[92vh] max-w-lg flex-col items-center justify-center overflow-hidden rounded-3xl bg-white p-4 text-center shadow-2xl"
             onClick={(e) => e.stopPropagation()}
           >
             <button
               type="button"
               onClick={() => setSelectedImage(null)}
-              className="absolute right-4 top-4 flex h-9 w-9 items-center justify-center rounded-full bg-rose-ink/10 text-lg font-bold text-rose-ink hover:bg-rose-ink/20"
+              className="absolute right-4 top-4 z-10 flex h-9 w-9 items-center justify-center rounded-full bg-black/60 text-lg font-bold text-white hover:bg-black/80"
               aria-label="Fermer"
             >
               ✕
             </button>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src={selectedImage.image}
+              src={imagePaths[selectedImage.id] || selectedImage.image}
               alt={locale === "fr" ? selectedImage.title_fr : selectedImage.title_en}
-              className="max-h-[60vh] w-full rounded-2xl object-contain"
+              className="max-h-[70vh] w-auto max-w-full rounded-2xl object-contain shadow-md"
             />
-            <h4 className="mt-4 font-serif text-lg font-bold text-rose-ink">
+            <h4 className="mt-3 font-serif text-lg font-bold text-rose-ink">
               {locale === "fr" ? selectedImage.title_fr : selectedImage.title_en}
             </h4>
-            <p className="mt-2 text-xs text-rose-ink/80 sm:text-sm">
+            <p className="mt-1 text-xs text-rose-ink/80 sm:text-sm">
               {locale === "fr" ? selectedImage.caption_fr : selectedImage.caption_en}
             </p>
           </div>
