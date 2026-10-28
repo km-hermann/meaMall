@@ -164,22 +164,23 @@ export const albumCheckpoints: AlbumCheckpoint[] = [
   {
     id: "checkpoint-9",
     stepNumber: 9,
-    title_fr: "Complicité d'Âme : Avec sa « Sœur » Ange 👯‍♀️💖",
-    title_en: "Soul Sisters: An Unforgettable Month with Ange 👯‍♀️💖",
+    title_fr: "Complicité Royale : Avec sa Bestie Mama Dangotte 👯‍♀️✨",
+    title_en: "Royalty Besties: Unforgettable Month with Mama Dangotte 👯‍♀️✨",
     date: "1 Mois Inoubliable",
     location: "Allemagne 🇩🇪",
     caption_fr:
-      "Ce mois magique et mémorable passé ensemble en Allemagne avant qu'Ange ne reparte ! Plus qu'une amie, une véritable sœur de cœur. Des fous rires, des confidences et des souvenirs précieux gravés pour toujours.",
+      "Ce mois magique et inoubliable passé ensemble en Allemagne avant que Mama Dangotte ne reparte ! La vraie définition de la Bestie : des fous rires incontrôlables, des virées de Milliardaires et des souvenirs gravés pour toujours. Une amitié en or massif !",
     caption_en:
-      "That magical and memorable month spent together in Germany before Ange returned! More than a best friend, a true soul sister. Unstoppable laughter, heart-to-heart talks, and precious memories etched forever.",
-    image: "/album/photo-ange.jpg",
+      "That magical and unforgettable month spent together in Germany before Mama Dangotte returned! The pure definition of a Bestie: unstoppable laughter, billionaire adventures, and lifelong memories. Pure gold friendship!",
+    image: "/album/photo-mama-dangotte.jpg",
     altImages: [
       "/album/photo-9.jpg",
-      "/album/photo-ange.jpeg",
-      "/album/photo-ange.png",
+      "/album/photo-mama-dangotte.jpeg",
+      "/album/photo-mama-dangotte.png",
+      "/album/photo-bestie.jpg",
       "/album/photo-9.jpeg",
     ],
-    placeholderHint: "Photo avec Ange en Allemagne 👯‍♀️💖 (ex: photo-ange.jpg ou photo-9.jpg)",
+    placeholderHint: "Photo avec sa Bestie Mama Dangotte 👯‍♀️✨ (ex: photo-mama-dangotte.jpg ou photo-9.jpg)",
   },
   {
     id: "checkpoint-10",
